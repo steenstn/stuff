@@ -1,5 +1,13 @@
 import sys
-print(sys.argv[0])
+if len(sys.argv) == 1:
+    print("Usage: convert ab x")
+    print("a/b is one of h,d,b for hexadecimal, decimal or binary")
+    print("x is the number to convert")
+    quit()
+
+if(len(sys.argv) != 3):
+    print("Invalid number of parameters. Expected 2")
+    quit()
 input = sys.argv[1]
 target = sys.argv[2]
 convertFrom = input[0]
