@@ -1,8 +1,26 @@
 import sys
+
+def printInfo():
+    print("""
+    Converter
+    ---------
+    Converts a number between different systems.
+
+    Usage: convert ab x
+           convert b x
+    a/b is one of [hbd] for hexadecimal, decimal or binary
+    x is the number to convert
+
+    Example:
+    Convert 15 from hexadecimal to decimal:
+    convert hd 15
+
+    If the first parameter only has one character it assumes converting from decimal
+    convert h 15 - Convert 15 to hexadecimal
+    """)
+
 if len(sys.argv) == 1:
-    print("Usage: convert ab x")
-    print("a/b is one of h,d,b for hexadecimal, decimal or binary")
-    print("x is the number to convert")
+    printInfo()
     quit()
 
 if(len(sys.argv) != 3):
