@@ -10,8 +10,18 @@ if(len(sys.argv) != 3):
     quit()
 input = sys.argv[1]
 target = sys.argv[2]
-convertFrom = input[0]
-convertTo = input[1]
+
+convertFrom = "d"
+convertTo = "d"
+
+if len(input) == 1:
+    convertFrom = "d"
+    convertTo = input[0]
+elif len(input) != 2:
+    print("Invalid number of parameters in (" + input + "). Expected 1 or 2")
+else:
+    convertFrom = input[0]
+    convertTo = input[1]
 
 tempValue = 0
 if convertFrom == 'h':
