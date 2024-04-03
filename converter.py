@@ -12,8 +12,11 @@ def printInfo():
     x is the number to convert
 
     Example:
-    Convert 15 from hexadecimal to decimal:
-    convert hd 15
+    Convert 15 from decimal to hexadecimal
+    convert dh 15
+
+    Convert F from hexadecimal to decimal:
+    convert hd f
 
     If the first parameter only has one character it assumes converting from decimal
     convert h 15 - Convert 15 to hexadecimal
