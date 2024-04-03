@@ -3,10 +3,10 @@
 # Searches for a Google/Zoom link and opens it
 
 meeting_title=$(icalBuddy -n -li 1 -b "" -ea -iep title eventsToday)
-meeting_link=$(icalBuddy -n -li -ea 1 eventsToday | grep -o "https://meet.google.com/\w.*-\w.*-\w.*" | head -1)
+meeting_link=$(icalBuddy -n -li 1 -ea eventsToday | grep -o "https://meet.google.com/\w.*-\w.*-\w.*" | head -1)
 
 if [[ -z "${meeting_link}" ]]; then
-  meeting_link=$(icalBuddy -n -li 1 eventsToday | grep -o "https://wedbush.zoom.us/[^\s]/\d*" | head -1)
+  meeting_link=$(icalBuddy -n -li 1 -ea eventsToday | grep -o "https://wedbush.zoom.us/[^\s]/\d*" | head -1)
 fi
 
 if [[ -z "${meeting_link}" ]]; then
