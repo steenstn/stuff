@@ -1,5 +1,9 @@
 # List the recently visited branches
 # Sorted by most recently visited
+# 
+# Gets the current branch and if currently on a branch,
+# saves the branch name to $output_file.
+#
 # For zsh:
 # Add this to .zshrc
 # preexec() {
