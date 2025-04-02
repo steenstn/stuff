@@ -1,5 +1,5 @@
-# Append the current git branch to a file to keep a history of recent branches
-#
+# List the recently visited branches
+# Sorted by most recently visited
 # For zsh:
 # Add this to .zshrc
 # preexec() {
@@ -17,5 +17,8 @@ fi
 
 if ! grep -qF "${branch}" "$output_file" 2> /dev/null; then
 	echo "${branch}" >> "$output_file"
+else
+	# Move the line with the branch to the top of the file
+	printf "/${branch}/m0\nwq\n" | ed -s "$output_file" -
 fi
 
