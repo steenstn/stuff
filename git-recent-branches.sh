@@ -1,17 +1,13 @@
-# List the recently visited branches
-# Sorted by most recently visited
-# 
-# Gets the current branch and if currently on a branch,
-# saves the branch name to $output_file.
+# Adds the current git branch to a file.
+# If it's already in the file move it to top
 #
-# For zsh:
-# Add this to .zshrc
+# To keep a running history of most recently visited branches,
+# add this to .zshrc:
 # preexec() {
 #     sh /path-to-script/git-recent-branches.sh
 # }
 #
 # Then cat the file to see recent branches
-
 
 output_file=~/git_recent_branches.txt
 branch=$(git branch --show-current 2> /dev/null)
