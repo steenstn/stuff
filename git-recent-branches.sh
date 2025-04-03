@@ -7,7 +7,9 @@
 #     sh /path-to-script/git-recent-branches.sh
 # }
 #
-# Then cat the file to see recent branches
+# Then for easy access add:
+# alias rb='cat /path-to-script/git_recent_branches.txt'
+#
 
 output_file=~/git_recent_branches.txt
 branch=$(git branch --show-current 2> /dev/null)
