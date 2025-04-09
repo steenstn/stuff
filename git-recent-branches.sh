@@ -12,6 +12,7 @@
 #
 
 output_file=~/git_recent_branches.txt
+history_length=8
 branch=$(git branch --show-current 2> /dev/null)
 if [[ -z "$branch" ]]; then
 	exit
@@ -24,3 +25,7 @@ else
 	printf "/${branch}/m0\nwq\n" | ed -s "$output_file" -
 fi
 
+# Remove the last line if there are too many entries
+if [ $(wc -l < "$output_file") -gt $history_length ]; then
+	printf "\$d\nwq\n" | ed -s "$output_file" -
+fi
