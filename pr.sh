@@ -1,7 +1,7 @@
 branch_name=$(git branch --show-current)
-project_name=$(pwd | grep -o "qapital.*")
+project_name=$(pwd | grep -o "rider")
 # b = "https://github.com/qapital/qapital-investment/pull/new/account-create-updates"
-url="https://github.com/qapital/${project_name}/pull/new/${branch_name}"
+url="https://github.com/moneaOrg/${project_name}/pull/new/${branch_name}"
 if [[ -z "${branch_name}" ]]; then
   echo "Not in a git branch"
   exit
