@@ -23,7 +23,7 @@ if ! grep -qF "${branch}" "$output_file" 2> /dev/null; then
 fi
 
 # Move the line with the branch to the top of the file
-printf "/${branch}/m0\nwq\n" | ed -s "$output_file" -
+printf "g/^${branch}$/m0\nwq\n" | ed -s "$output_file" -
 
 # Remove the last line if there are too many entries
 if [ $(wc -l < "$output_file") -gt $history_length ]; then
